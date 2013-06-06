@@ -1,0 +1,42 @@
+html, body {
+    height:100%;
+}
+
+body {
+    background:#333;
+    color:#fff;
+}
+
+.container,
+.fifty-fifty { height:100%; }
+.fifty-fifty .span6 { height:50%; }
+
+.glower-container { text-align: center; }
+
+#glower {
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-color:transparent;
+    height:90%;
+}
+
+#glower.pulse {
+    animation-name: pulsating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: pulsating;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes pulsating {
+    from { background-color: #DDD; box-shadow: 0 0 9px #DDD; }
+    50% { background-color: #FFF; box-shadow: 0 0 100px #FFF; }
+    to { background-color: #DDD; box-shadow: 0 0 9px #DDD; }
+}
+
+@-webkit-keyframes pulsating {
+    from { background-color: #DDD; box-shadow: 0 0 9px #DDD; }
+    50% { background-color: #FFF; box-shadow: 0 0 100px #FFF; }
+    to { background-color: #DDD; box-shadow: 0 0 9px #DDD; }
+}
