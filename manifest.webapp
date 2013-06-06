@@ -1,9 +1,9 @@
 {
-    "name": "DMC 2013 Demo",
+    "name": "Too slow",
     "description": "Test your reaction time",
     "launch_path": "/index.html",
     "icons": {
-        "128": "/dmc128x128.png"
+        "128": "/icon128x128.jpg"
     },
     "fullscreen": "true",
     "developer": {
