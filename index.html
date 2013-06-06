@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dutch Mobile Conference Demo</title>
+    <title>Too Slow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="/icon128x128.jpg"/>
     <style>
         body {
             background: #333;
@@ -50,7 +56,9 @@
 <div id="instruct">Tap the icon when it starts to glow!</div>
 <img id="glower" src="images/zombie.jpg" alt="Press when glowing..." />
 <div id="score">Reaction time: <span id="time"></span></div>
+<div id="submitscoring"><button id="submitScores" value="Submit score"></button></div>
 
+<script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
     var pulserStart = null,
         glowerImages = ['bacon.jpg', 'beer.jpg', 'coffee.jpg', 'elephpant.jpg', 'zombie.jpg'];
