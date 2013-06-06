@@ -17,7 +17,6 @@ Vagrant.configure("2") do |config|
     chef.add_recipe :apt
     chef.add_recipe 'git'
     chef.add_recipe 'apache2'
-    chef.add_recipe 'redis'
     chef.add_recipe 'php'
     chef.add_recipe 'vim'
     chef.add_recipe 'apache2::mod_php5'
@@ -44,15 +43,10 @@ Vagrant.configure("2") do |config|
         :keepalive            => "On",
         :keepaliverequests    => "100",
         :keepalivetimeout     => "5"
-      },
-      :redis  => {
-        :bind        => "127.0.0.1",
-        :port        => "6379",
-        :config_path => "/etc/redis/redis.conf",
-        :daemonize   => "yes",
-        :timeout     => "300",
-        :loglevel    => "notice"
       }
-    }
+  }
+  
+  
+  config.vm.provision :shell, :inline => "apt-get install redis-server"
   end
 end
