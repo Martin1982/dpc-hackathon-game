@@ -1,0 +1,40 @@
+{
+    "scores": [
+        {
+            "name": "Player A",
+            "score": 100
+        },
+        {
+            "name": "Player B",
+            "score": 120
+        },
+        {
+            "name": "Player C",
+            "score": 180
+        },
+        {
+            "name": "Player E",
+            "score": 220
+        },
+        {
+            "name": "Player G",
+            "score": 250
+        },
+        {
+            "name": "Player A",
+            "score": 290
+        },
+        {
+            "name": "Player C",
+            "score": 5590
+        },
+        {
+            "name": "Player B",
+            "score": 48943
+        },
+        {
+            "name": "Player B",
+            "score": 48283
+        },
+    ]
+}

@@ -22,6 +22,11 @@ $(function() {
             navigator.vibrate(0);
         }
 
+
+        if ('notification' in navigator) {
+            navigator.notification.vibrate(0);
+        }
+
         pulserStart = null;
 
         pulser.setAttribute('class', '');
@@ -41,6 +46,11 @@ $(function() {
         if ('vibrate' in navigator) {
             navigator.vibrate(10000);
         }
+
+        if ('notification' in navigator) {
+            navigator.notification.vibrate(10000);
+        }
+
         pulser.addEventListener('click', stopGlower, false);
     }
 
