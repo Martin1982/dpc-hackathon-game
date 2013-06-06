@@ -11,8 +11,8 @@ $(function() {
     {
         var endTime = new Date().getTime(),
             score   = endTime - pulserStart,
-            scoreEl = $('#time'),
-            pulser  = $('#glower');
+            scoreEl = document.getElementById('time'),
+            pulser  = document.getElementById('glower');
 
         if (pulserStart === null) {
             return;
@@ -32,6 +32,7 @@ $(function() {
         pulser.setAttribute('class', '');
         pulser.removeEventListener('click', stopGlower, false);
         scoreEl.innerHTML = (score.toString() + " ms");
+        loadHighScores();
 
         startGame();
     }
@@ -62,5 +63,19 @@ $(function() {
         setTimeout(startGlower, (startPulse*1000));
     }
 
+    function loadHighScores() {
+        $.getJSON('/mocks/hiscores.json', function(data) {
+            console.log('fds');
+            if (data.scores.length > 0) {
+                for (var i; i < data.scores.length; i++) {
+                    var dataItem = data.scores[i];
+                    $('<li>').html(dataItem.name + ": " + dataItem.score).appendTo('#highscoreslist');
+                }
+            }
+        });
+    }
+
+
+    loadHighScores();
     startGame();
 });
