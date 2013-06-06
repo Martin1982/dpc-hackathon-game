@@ -22,7 +22,11 @@
 
 <div class="container">
     <div class="row-fluid fifty-fifty">
-        <div class="span6 glower-container"><img id="glower"/></div>
+        <div class="span6 glower-container">
+            <div id="instruct">Tap the icon when it starts to glow!</div>
+            <img id="glower"/>
+            <div id="score">Reaction time: <span id="time"></span></div>
+        </div>
         <div class="span6">
             <h3>High scores</h3>
             <ul id="highscoreslist">
@@ -30,10 +34,8 @@
             </ul>
         </div>
     </div>
-    <!--<div id="instruct">Tap the icon when it starts to glow!</div>-->
     <!--<img id="glower" src="images/zombie.jpg" alt="Press when glowing..." />-->
-    <!--<div id="score">Reaction time: <span id="time"></span></div>-->
-    <!--<div id="submitscoring"><button id="submitScores" value="Submit score"></button></div>-->
+    <div id="submitscoring"><button id="submitScores" value="Submit score"></button></div>
 </div>
 
 </body>

@@ -33,7 +33,6 @@ $(function() {
         pulser.removeEventListener('click', stopGlower, false);
         scoreEl.innerHTML = (score.toString() + " ms");
         loadHighScores();
-
         startGame();
     }
 
@@ -74,7 +73,6 @@ $(function() {
             }
         });
     }
-
 
     loadHighScores();
     startGame();
