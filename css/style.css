@@ -29,6 +29,18 @@ body {
     -webkit-animation-iteration-count: infinite;
 }
 
+.container { width:100% }
+
+@media all and (max-width: 495px) and (min-width: 360px) {
+    [class*="span"],
+    .uneditable-input[class*="span"],
+    .row-fluid [class*="span"] {
+        width:48.9362%;
+        float:left;
+    }
+
+}
+
 @keyframes pulsating {
     from { background-color: #DDD; box-shadow: 0 0 9px #DDD; }
     50% { background-color: #FFF; box-shadow: 0 0 100px #FFF; }
