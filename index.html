@@ -48,11 +48,12 @@
 <body>
 
 <div id="instruct">Tap the icon when it starts to glow!</div>
-<img id="glower" src="dmc480x480.png" alt="Press when glowing..." />
+<img id="glower" src="images/zombie.jpg" alt="Press when glowing..." />
 <div id="score">Reaction time: <span id="time"></span></div>
 
 <script type="text/javascript">
-    var pulserStart = null;
+    var pulserStart = null,
+        glowerImages = ['bacon.jpg', 'beer.jpg', 'coffee.jpg', 'elephpant.jpg', 'zombie.jpg'];
 
     function getRandomInt(min, max)
     {
@@ -89,7 +90,7 @@
 
         pulser.setAttribute('class', 'pulse');
         pulserStart = new Date().getTime();
-        console.log(Object.keys(navigator));
+
         if ('vibrate' in navigator) {
             navigator.vibrate(10000);
         }
@@ -99,6 +100,8 @@
     function startGame()
     {
         var startPulse = getRandomInt(3, 10);
+
+        document.getElementById("glower").setAttribute('src', 'images/' + glowerImages[getRandomInt(0,4)]);
         setTimeout(startGlower, (startPulse*1000));
     }
 
