@@ -29,6 +29,10 @@ body {
     -webkit-animation-iteration-count: infinite;
 }
 
+#score { display:none; }
+#time { text-decoration: blink; }
+#highscoreslist { height:100%; overflow-y:auto; }
+
 .container { width:100% }
 
 @media all and (max-width: 495px) and (min-width: 360px) {
@@ -38,7 +42,6 @@ body {
         width:48.9362%;
         float:left;
     }
-
 }
 
 @keyframes pulsating {
