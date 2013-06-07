@@ -1,6 +1,7 @@
 $(function() {
     var pulserStart = null,
-        glowerImages = ['bacon.jpg', 'beer.jpg', 'coffee.jpg', 'elephpant.jpg', 'zombie.jpg'];
+        glowerImages = ['bacon.jpg', 'beer.jpg', 'coffee.jpg', 'elephpant.jpg', 'zombie.jpg'],
+        score;
 
     function getRandomInt(min, max)
     {
@@ -10,9 +11,10 @@ $(function() {
     function stopGlower()
     {
         var endTime = new Date().getTime(),
-            score   = endTime - pulserStart,
-            scoreEl = document.getElementById('time'),
-            pulser  = document.getElementById('glower');
+            scoreEl = $('#score'),
+            pulser  = $('#glower');
+
+        score   = endTime - pulserStart;
 
         if (pulserStart === null) {
             return;
@@ -29,18 +31,19 @@ $(function() {
 
         pulserStart = null;
 
-        pulser.setAttribute('class', '');
-        pulser.removeEventListener('click', stopGlower, false);
-        scoreEl.innerHTML = (score.toString() + " ms");
+        pulser.removeClass('pulse');
+        pulser.click(stopGlower);
+        scoreEl.find('#time').text(score.toString() + " ms");
+        scoreEl.show();
         loadHighScores();
         startGame();
     }
 
     function startGlower()
     {
-        var pulser = document.getElementById('glower');
+        var pulser = $('#glower');
 
-        pulser.setAttribute('class', 'pulse');
+        pulser.addClass('pulse');
         pulserStart = new Date().getTime();
 
         if ('vibrate' in navigator) {
@@ -51,7 +54,7 @@ $(function() {
             navigator.notification.vibrate(10000);
         }
 
-        pulser.addEventListener('click', stopGlower, false);
+        pulser.click(stopGlower);
     }
 
     function startGame()
@@ -73,6 +76,15 @@ $(function() {
             }
         });
     }
+
+    function submitHighScore() {
+        alert('submit score: ' + score);
+        $('#highscoreslist').append('<li>' + score + '</li>')
+        $('#score').hide();
+        startGame();
+    }
+
+    $('#submit').click(submitHighScore);
 
     loadHighScores();
     startGame();
